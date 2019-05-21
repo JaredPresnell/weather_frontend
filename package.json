@@ -1,0 +1,40 @@
+{
+  "name": "redux-cra",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@google/maps": "^0.5.5",
+    "@material-ui/core": "^3.9.3",
+    "@material-ui/system": "^3.0.0-alpha.2",
+    "bluebird": "^3.5.3",
+    "google-maps-react": "^2.0.2",
+    "react": "^16.8.6",
+    "react-animated-weather": "^2.0.0",
+    "react-dom": "^16.8.6",
+    "react-material-ui-form": "^1.1.3",
+    "sass": "^1.20.1",
+    "skycons": "^1.0.0",
+    "typeface-roboto": "0.0.54"
+  },
+  "devDependencies": {
+    "concurrently": "^4.0.1",
+    "nodemon": "^1.18.10",
+    "react-scripts": "1.1.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "buildsave": "babel src --out-dir dist",
+    "serve": "node dist/server.js",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "client": "cd src && npm start",
+    "server": "node server.js",
+    "dev": "concurrently --kill-others-on-fail \"cd .. && cd weather_backend && node server.js\" \"npm run start\" \"cd src/scss && sass --watch App.scss ../App.css\""
+  },
+  "proxy": "http://localhost:5000/",
+  "description": "",
+  "main": "server.js",
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,109 @@
+@import 'mixins';
+@import url(https://fonts.googleapis.com/css?family=Raleway);
+
+@mixin for-phone-only {
+  @media (max-width: 599px) { @content; }
+}
+@mixin for-tablet-portrait-up {
+  @media (min-width: 600px) { @content; }
+}
+@mixin for-tablet-landscape-up {
+  @media (min-width: 900px) { @content; }
+}
+@mixin for-desktop-up {
+  @media (min-width: 1200px) { @content; }
+}
+@mixin for-big-desktop-up {
+  @media (min-width: 1800px) { @content; }
+}
+
+
+$text-color: #fff;
+$scheme3: #5ab9ea;
+$spotifyGreen: #1DB954;
+
+*{
+  font-family: 'Raleway', sans-serif;
+}
+
+.App {
+  text-align: center;
+}
+
+.container{
+  display:flex;
+  justify-content: center;
+
+}
+.input_container{
+  padding-top: 15px;
+  padding-bottom: 10px;
+  // background-color: #858585;
+  background-color: #aaa;
+}
+.bar_item{
+  margin-right: 10px;
+}
+
+.flexbox-container{
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+
+  align-items: center;
+  justify-content: center;
+
+}
+.today_info{
+  // background-color: #fcfcfc;
+  background-color: rgb(244, 244, 244);
+
+  padding-top: 15px;
+  padding-bottom: 10px;
+  p{
+    margin-bottom: 2px;
+    margin-top: 2px; 
+  }
+  h4{
+    canvas{
+      margin-bottom:-15px;
+      margin-right: 8px;
+    }
+  }
+}
+
+$radius: 7px;
+.hourly_graph_segment{
+  margin-top:8px;
+  p{
+    font-size: .85em;
+  }
+}
+
+.first_tab{
+  border-top-left-radius:$radius;
+  border-bottom-left-radius: $radius;
+}
+
+.last_tab{
+  border-top-right-radius: $radius;
+  border-bottom-right-radius: $radius;
+}
+
+.mapContainer{
+  margin-top: 40px;
+}
+
+.dailyContainer{
+  .dailySummary:before {
+    content: ""; 
+    display: block;
+    margin: 0 auto; 
+    width: 70%; 
+    padding-top: 5px;
+    border-top: 1px solid rgb(127, 130, 135, 0.2);
+  }
+}
