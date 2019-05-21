@@ -1,16 +1,7 @@
 import React, { Component } from 'react';
 import {
   Typography,
-  FormControl,
-  InputLabel,
-  Input, 
-  Button,
-  TextField,
-  Form,
-  Toolbar,
-  AppBar,
 } from '@material-ui/core';
-import MaterialUIForm from 'react-material-ui-form';
 
 import { withStyles } from '@material-ui/core/styles';
 import Skycons from 'skycons';
@@ -107,9 +98,6 @@ class DailyWeather extends Component {
 				var tempRight = {
 					'marginLeft': 10,
 					'marginRight': (highestTemp - dayTemp.high) * pxPerDegree,
-				}
-				var weatherIcon = {
-					'marginRight': 10
 				}
 				var dayOfWeek = {
 					'width': 40,

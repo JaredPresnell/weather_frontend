@@ -1,16 +1,8 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 
 import './App.css';
 import 'typeface-roboto';
-import {
-  Typography,
-  FormControl,
-  InputLabel,
-  Input, 
-  Button,
-  TextField
-} from '@material-ui/core';
+
 
 // COMPONENTS
 import CityInput from './Components/CityInput.js';
@@ -19,7 +11,6 @@ import HourlyWeather from './Components/HourlyWeather.js';
 import DailyWeather from './Components/DailyWeather.js';
 import GoogleMap from './Components/GoogleMap.js';
 
-import Promise from 'bluebird';
 
 class App extends Component {
   constructor(props){

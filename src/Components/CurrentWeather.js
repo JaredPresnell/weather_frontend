@@ -2,17 +2,9 @@ import React, { Component } from 'react';
 import {
   Typography,
   Toolbar,
-  FormControl,
-  InputLabel,
-  Input, 
-  Button,
-  TextField,
-  Form,
   AppBar
 } from '@material-ui/core';
-import { createMuiTheme } from '@material-ui/core/styles';
-import spacing from '@material-ui/system';
-import MaterialUIForm from 'react-material-ui-form';
+
 import { withStyles } from '@material-ui/core/styles';
 
 import ReactAnimatedWeather from 'react-animated-weather';

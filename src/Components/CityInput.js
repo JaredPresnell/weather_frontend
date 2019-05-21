@@ -1,12 +1,9 @@
 import React, { Component } from 'react';
 import {
-  Typography,
   FormControl,
   InputLabel,
   Input, 
   Button,
-  TextField,
-  Form
 } from '@material-ui/core';
 import MaterialUIForm from 'react-material-ui-form'
 import { withStyles } from '@material-ui/core/styles';

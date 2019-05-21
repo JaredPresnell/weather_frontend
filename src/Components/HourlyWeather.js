@@ -3,15 +3,7 @@ import {
   Typography,
   AppBar,
   Toolbar,
-  FormControl,
-  InputLabel,
-  Input, 
-  Button,
-  TextField,
-  Form,
-  Grid
 } from '@material-ui/core';
-import MaterialUIForm from 'react-material-ui-form'
 import { withStyles } from '@material-ui/core/styles';
 
 const styles = {
