@@ -7,6 +7,7 @@
     "@material-ui/core": "^3.9.3",
     "@material-ui/system": "^3.0.0-alpha.2",
     "bluebird": "^3.5.3",
+    "dotenv": "^8.0.0",
     "google-maps-react": "^2.0.2",
     "react": "^16.8.6",
     "react-animated-weather": "^2.0.0",
@@ -32,7 +33,7 @@
     "server": "node server.js",
     "dev": "concurrently --kill-others-on-fail \"cd .. && cd weather_backend && node server.js\" \"npm run start\" \"cd src/scss && sass --watch App.scss ../App.css\""
   },
-  "proxy": "http://localhost:5000/",
+  "proxy": "http://localhost:5001/",
   "description": "",
   "main": "server.js",
   "author": "",
