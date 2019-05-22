@@ -49,8 +49,7 @@ class App extends Component {
     this.setState({city: city});
   }
   submitCity(){
-    console.log('submit city');
-    console.log(this.state.city);
+    
 
     fetch('/getLatLong', {
       method: 'POST',
@@ -62,7 +61,8 @@ class App extends Component {
       }
     })
     .then((res)=>{
-      // console.log(res);
+      // *************************
+      // Question about using stream reader:
       // const reader = res.body.getReader();
       // reader.read().then(({done, value})=>{
       //   console.log(value);
@@ -85,6 +85,8 @@ class App extends Component {
       // .then((data)=>{
       //   console.log(data);
       // }); //this basically is just like some array of 22 integers
+      // *****************************
+
       console.log(res);
 
       //console.log(res.headers.forEach((value)=>{console.log(value)}));

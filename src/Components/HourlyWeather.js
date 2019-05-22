@@ -63,6 +63,8 @@ class HourlyWeather extends Component {
   	mapWeather(hours_today){
   		var hourlyWeather = [];
   		hours_today.forEach((hour, index)=>{
+  			// creates a new graph block every time the weather type changes
+  			// if weather type is the same, duration increments to increase the size of the weather block
 			if(index>0){
 				if(hour.summary != hourlyWeather[hourlyWeather.length-1].weatherType)
 					hourlyWeather.push({weatherType: hour.summary, duration: 1});
@@ -70,16 +72,14 @@ class HourlyWeather extends Component {
 			}
 			else hourlyWeather.push({weatherType: hour.summary, duration:1});
 		});
+
 		var hourlyWeatherJsx = [];
 		var hourlyWeatherLastIndex = hourlyWeather.length-1;
-		console.log(hourlyWeatherLastIndex);
+	
 		hourlyWeather.forEach((weather, index)=>{
 			var gridWidthStyle = {
 				width: 35*weather.duration,
 				'backgroundColor': this.mapColor(weather.weatherType),
-				//height:50,
-				// 'padding-top':20,
-				// 'padding-bottom':20,
 				'verticalAlign': 'middle',
 				'height': 60,
 				'maxHeight':60
@@ -87,7 +87,6 @@ class HourlyWeather extends Component {
 			var noWeatherText = {
 				width: 35*weather.duration,
 				'backgroundColor': this.mapColor(weather.weatherType),
-				//height:50,
 				'height':60,
 				'verticalAlign': 'middle',
 				'maxHeight':60
@@ -95,13 +94,14 @@ class HourlyWeather extends Component {
 			var noWeatherTextFirst = {
 				width: 35*weather.duration,
 				'backgroundColor': this.mapColor(weather.weatherType),
-				//height:50,
 				'height':60,
 				'verticalAlign': 'middle',
 				'maxHeight':60,
-				// 'borderTopLeftRadius':5,
-				// 'borderBottomLeftRadius':5
 			}
+
+			//if graph segment has only 1 as its length, push a graph segment with no text
+			//first and last graph segments should have rounded enges
+			 	// first graph segment gets added class "first_tab", last gets "last_tab"
 			if(weather.duration < 2)
 			{
 				if(index===0)
@@ -166,8 +166,10 @@ class HourlyWeather extends Component {
 		var hourlyWeather = [];
 		if(hours_today.length>0) 
 			hourlyWeather = this.mapWeather(hours_today);
+
 		var today = new Date();
 		var currentHours = today.getHours();
+
 		if(this.props.hours_today.length>0)
 		{
 			hours_today.forEach((hour, index)=>{
@@ -195,10 +197,9 @@ class HourlyWeather extends Component {
 			)	
 		}
 				
-		else return <h1>not rendered</h1>
+		else return <h1>Loading...</h1>
 	}
 	render(){
-		const hourlyWeather = this.props.hours_today;
 		return (
 		  <div>
 		 	{this.renderHours()}

@@ -11,22 +11,18 @@ import { withStyles } from '@material-ui/core/styles';
 const styles = {
 	input_field: {
 		width: 300,
-		// 'backgroundColor': '#aaa',
 	},
 }
 class CityInput extends Component {
 	componentDidMount(){
-		// if(this.state.count ==0)
-			this.props.submitCity();
-		// this.setState({count: this.state.count + 1});
-		// console.log('state count' + this.state.count);
+		// submits default city (Medellin)
+		this.props.submitCity();
 	}
 	handleUpdateCity(e){
 		this.props.updateCity(e.target.value);
 	}
 	handleSubmit(e){
 		//e.preventDefault();
-		console.log('handling submit');
 		this.props.submitCity();
 	}
 	render(){
